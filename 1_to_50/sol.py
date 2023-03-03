@@ -95,13 +95,27 @@ def smallest_multiple(n: range= range(1, 21)):
             d += 1
         if d == end:
             break    
-        res += 1
+        res += end
     return res
 
+"""
+Problem 6
+Sum Square Difference
+
+Answer: 25164150
+"""
+
+def sum_square_diff(n=10):
+    sum_natu = (n*(n+1))//2
+    res = 0
+    for i in range(n+1):
+        res += i**2
+    return sum_natu**2 - res
 
 if __name__ == "__main__":
     # print(sum_multiples_3_5())
     # print(even_fib())
     # print(largest_prime_factor())
     # print(pal_largest_product(3))
-    print(smallest_multiple(range(1, 21)))
+    # print(smallest_multiple(range(1, 21)))
+    print(sum_square_diff(100))
