@@ -75,8 +75,33 @@ def pal_largest_product(n=3):
             if product > res and str(product) == str(product)[::-1]:
                 res = product
     return res
+
+"""
+2520 is the smallest number that can be divided 
+by each of the numbers from 1 to 10 without any remainder.
+
+What is the smallest positive number that is evenly divisible 
+by all of the numbers from 1 to 20?
+
+Answer: 232792560
+"""
+
+def smallest_multiple(n: range= range(1, 21)):
+    res = n.stop
+    end = n.stop
+    while True: 
+        d = n.start
+        while res % d == 0 and d != end:
+            d += 1
+        if d == end:
+            break    
+        res += 1
+    return res
+
+
 if __name__ == "__main__":
     # print(sum_multiples_3_5())
     # print(even_fib())
     # print(largest_prime_factor())
-    print(pal_largest_product(3))
+    # print(pal_largest_product(3))
+    print(smallest_multiple(range(1, 21)))
