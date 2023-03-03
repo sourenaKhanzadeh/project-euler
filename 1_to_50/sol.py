@@ -57,7 +57,26 @@ def largest_prime_factor(n=600851475143):
             break
     return max(factors)
 
+"""
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+Answere: 906609
+"""
+
+def pal_largest_product(n=3):
+    start1  = "1" + "0"* (n - 1)
+    start2  = "1" + "0"* (n - 1)
+    res = -float("inf")
+    for i in range(eval(start1), 10**(n)):
+        for j in range(eval(start2), 10**(n)):
+            product = int(str(i * j))
+            if product > res and str(product) == str(product)[::-1]:
+                res = product
+    return res
 if __name__ == "__main__":
     # print(sum_multiples_3_5())
     # print(even_fib())
-    print(largest_prime_factor())
+    # print(largest_prime_factor())
+    print(pal_largest_product(3))
